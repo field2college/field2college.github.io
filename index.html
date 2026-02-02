@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Field 2 College | College Sports</title>
 
 <style>
@@ -31,9 +32,15 @@
   }
 
   .video-bg video {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    /* ✅ MOBILE: zoom 150% */
+    transform: scale(1.5);
+    transform-origin: center center;
   }
 
   /* Overlay */
@@ -51,7 +58,7 @@
 
   .logo {
     width: 100%;
-    max-width: 170px;   /* um pouco menor no celular */
+    max-width: 170px;
     margin: 0 auto 18px;
     display: block;
   }
@@ -114,6 +121,12 @@
       justify-content: center;
     }
 
+    /* ✅ DESKTOP: tira o zoom do vídeo */
+    .video-bg video {
+      transform: scale(1);
+      transform-origin: center center;
+    }
+
     .content {
       width: 100%;
       max-width: 560px;
@@ -121,7 +134,7 @@
     }
 
     .overlay {
-      background: rgba(0,0,0,0.55); /* um pouco mais “claro” no desktop */
+      background: rgba(0,0,0,0.55);
     }
 
     .logo {
